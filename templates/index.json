@@ -47,132 +47,50 @@
         "show_text_below": false
       }
     },
-    "1647552582429a82f0": {
-      "type": "collection-list",
+    "aa290436-ce1a-467c-bcd1-bb9c9ef49e34": {
+      "type": "collection-list-ru",
       "blocks": {
-        "16475525825de1c72d-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "new-styles"
-          }
-        },
-        "16475525825de1c72d-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "shop-the-look-1"
-          }
-        },
-        "16475525825de1c72d-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "discover-flagship"
-          }
-        }
-      },
-      "block_order": [
-        "16475525825de1c72d-1",
-        "16475525825de1c72d-0",
-        "16475525825de1c72d-2"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 0
-      }
-    },
-    "69f7a534-1011-4244-9fca-44ef7c4a7479": {
-      "type": "collection-list",
-      "blocks": {
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "classic-pearls"
-          }
-        },
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "ruby"
-          }
-        },
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "emerald"
-          }
-        },
-        "6a7aa795-2a2d-4e32-9c60-c9440d3ecea8": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "sapphire"
-          }
-        }
-      },
-      "block_order": [
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-1",
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-0",
-        "template--15821018202348__69f7a534-1011-4244-9fca-44ef7c4a7479-166949122374cd2b15-2",
-        "6a7aa795-2a2d-4e32-9c60-c9440d3ecea8"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "56bce9ba-2942-4a18-b18f-5632d33bc6ce": {
-      "type": "collection-list",
-      "disabled": true,
-      "blocks": {
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-0": {
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0": {
           "type": "featured_collection",
           "settings": {
             "collection": "gold"
           }
         },
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-1": {
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "rose-gold"
+            "collection": "gold"
           }
         },
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-2": {
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "silver"
+            "collection": "gold"
+          }
+        },
+        "e85b4842-eb34-4662-a6ae-5951a26b401b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gold"
           }
         }
       },
       "block_order": [
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-0",
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-1",
-        "template--15821018202348__56bce9ba-2942-4a18-b18f-5632d33bc6ce-166949008696d8de85-2"
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0",
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-1",
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2",
+        "e85b4842-eb34-4662-a6ae-5951a26b401b"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h2",
+        "title": "Featured Collections",
+        "heading_size": "h1",
         "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "background-1",
+        "columns_desktop": 4,
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
@@ -193,164 +111,6 @@
         "swipe_on_mobile": true,
         "padding_top": 28,
         "padding_bottom": 0
-      }
-    },
-    "1647552579b7020d81": {
-      "type": "image-with-text",
-      "disabled": true,
-      "blocks": {
-        "16475525791ed9135d-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Black Tie Collection",
-            "heading_size": "h1"
-          }
-        },
-        "16475525791ed9135d-1": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "16475525791ed9135d-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP",
-            "button_link": "shopify:\/\/collections\/black-tie"
-          }
-        }
-      },
-      "block_order": [
-        "16475525791ed9135d-0",
-        "16475525791ed9135d-1",
-        "16475525791ed9135d-2"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "small",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "right",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "1649878914233bbf2e": {
-      "type": "image-with-text",
-      "disabled": true,
-      "blocks": {
-        "16498789133eb7d37c-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "First Love Collection",
-            "heading_size": "h1"
-          }
-        },
-        "16498789133eb7d37c-1": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "16498789133eb7d37c-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP",
-            "button_link": "shopify:\/\/collections\/first-love"
-          }
-        }
-      },
-      "block_order": [
-        "16498789133eb7d37c-0",
-        "16498789133eb7d37c-1",
-        "16498789133eb7d37c-2"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "0fc6c784-593f-418f-ad91-3f4fc40b33cf": {
-      "type": "slideshow",
-      "disabled": true,
-      "blocks": {
-        "template--18545684775244__0fc6c784-593f-418f-ad91-3f4fc40b33cf-16836470923230bd63-0": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--18545684775244__0fc6c784-593f-418f-ad91-3f4fc40b33cf-16836470923230bd63-0"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "adapt_image",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "71ceb7ba-ebaa-4d0a-9cbb-9883a859042b": {
-      "type": "test",
-      "blocks": {
-        "template--19808229622033__71ceb7ba-ebaa-4d0a-9cbb-9883a859042b-1689368342b33b5ad8-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-anne-memo-ring-silver-rose-gold-plated-cubic-zirconia.png",
-            "title": "Image 1"
-          }
-        },
-        "template--19808229622033__71ceb7ba-ebaa-4d0a-9cbb-9883a859042b-1689368342b33b5ad8-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-anne-memo-ring-silver-white-gold-plated-cubic-zirconia.png",
-            "title": "Image 2"
-          }
-        },
-        "b8e1d574-3a5f-44b2-afbe-260d29d05726": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-anne-memo-ring-silver-gold-plated-cubic-zirconia.png",
-            "title": "Image 3"
-          }
-        }
-      },
-      "block_order": [
-        "template--19808229622033__71ceb7ba-ebaa-4d0a-9cbb-9883a859042b-1689368342b33b5ad8-0",
-        "template--19808229622033__71ceb7ba-ebaa-4d0a-9cbb-9883a859042b-1689368342b33b5ad8-1",
-        "b8e1d574-3a5f-44b2-afbe-260d29d05726"
-      ],
-      "settings": {
-        "title": "Testing"
       }
     },
     "16498135706a271423": {
@@ -415,14 +175,8 @@
   },
   "order": [
     "1647552565fa55fb8d",
-    "1647552582429a82f0",
-    "69f7a534-1011-4244-9fca-44ef7c4a7479",
-    "56bce9ba-2942-4a18-b18f-5632d33bc6ce",
+    "aa290436-ce1a-467c-bcd1-bb9c9ef49e34",
     "featured_collection",
-    "1647552579b7020d81",
-    "1649878914233bbf2e",
-    "0fc6c784-593f-418f-ad91-3f4fc40b33cf",
-    "71ceb7ba-ebaa-4d0a-9cbb-9883a859042b",
     "16498135706a271423",
     "165005212099fcbbde"
   ]
