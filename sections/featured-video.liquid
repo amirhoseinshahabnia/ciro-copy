@@ -1,0 +1,3692 @@
+{% comment %}theme-check-disable UnusedAssign{% endcomment %}
+{%- assign sc_id = '#shopify-section-' | append: section.id -%}
+
+{{ 'section-simple-media.css' | asset_url | stylesheet_tag }}
+{% if section.settings.controls == true %}
+	{{ 'component-video-controls.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% comment %} STYLES {% endcomment %}
+
+<style type='text/css'>
+	#shopify-section-{{ section.id }} {
+	    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+	    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+	}
+
+	.simple-{{ section.id }} {
+	    padding-top: {{ section.settings.inner_padding_top | times: 0.50 | round: 0 }}px;
+	    padding-bottom: {{ section.settings.inner_padding_bottom | times: 0.50 | round: 0 }}px;
+	}
+
+	@media screen and (min-width: 749px) {
+	    #shopify-section-{{ section.id }} {
+	        padding-top: {{ section.settings.padding_top }}px;
+	        padding-bottom: {{ section.settings.padding_bottom }}px;
+	    }
+	    .simple-{{ section.id }} {
+	        padding-top: {{ section.settings.inner_padding_top }}px;
+	        padding-bottom: {{ section.settings.inner_padding_bottom }}px;
+	    }
+	}
+
+	{%- if section.settings.enable_absolute != true -%}
+
+	    @media screen and ( min-width: 750px ) {
+	        .simple-{{ section.id }}.small > .simple-block.content { width: 70%; height: auto; }
+	        .simple-{{ section.id }}.medium > .simple-block.content { width: 50%; height: auto; }
+	        .simple-{{ section.id }}.large > .simple-block.content { width: 30%; height: auto; }
+	        .simple-{{ section.id }}.full > .simple-block.content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+	    }
+
+	{%- else -%}
+
+	        {% if section.settings.mobile_positioning == 'centered_overlay' or section.settings.mobile_positioning == 'centered_after' %} @media screen and ( min-width: 750px ) { {% endif %}
+	            .simple-{{ section.id }} > .simple-block.content {
+	                position: absolute!important;
+	                {%- if section.settings.enable_distance_top == true -%}top: {{ section.settings.content_top }}%;{%- endif -%}
+	                {%- if section.settings.enable_distance_bottom == true -%}bottom: {{ section.settings.content_bottom }}%;{%- endif -%}
+	                {%- if section.settings.enable_distance_left == true -%}left: {{ section.settings.content_left }}%;{%- endif -%}
+	                {%- if section.settings.enable_distance_right == true -%}right: {{ section.settings.content_right }}%;{%- endif -%}
+
+	                {%- if section.settings.enable_distance_top != true and section.settings.enable_distance_bottom != true and section.settings.enable_distance_left != true and section.settings.enable_distance_right != true -%} top: 50%; left: 50%; transform: translate(-50%, -50%); {%- endif -%}
+	            }
+	        {% if section.settings.mobile_positioning == 'centered_overlay' or section.settings.mobile_positioning == 'centered_after' %} } {% endif %}
+
+	        {% if section.settings.mobile_positioning == 'centered_overlay' %}
+	            @media screen and ( max-width: 750px ) {
+	                .simple-{{ section.id }} > .simple-block.content {
+	                    position: absolute!important;
+	                    top: 50%;
+	                    left: 50%;
+	                    transform: translate(-50%, -50%);
+	                }
+	            }
+	        {% endif %}
+
+	        {% if section.settings.mobile_positioning == 'centered_after' %}
+	            @media screen and ( max-width: 750px ) {
+	                .simple-{{ section.id }} > .simple-block.content {
+	                    position: relative;
+	                }
+	            }
+	        {% endif %}
+
+	{%- endif -%}
+
+	@media screen and ( min-width: 750px ) {
+
+	    .simple-{{ section.id }}.small > .simple-media { width: 30%; }
+	    .simple-{{ section.id }}.medium > .simple-media { width: 50%; }
+	    .simple-{{ section.id }}.large > .simple-media { width: 70%; }
+	    .simple-{{ section.id }}.full > .simple-media { width: 100%; }
+
+	    {% if section.settings.content_fit == false %}
+	    .simple-{{ section.id }} .simple-block-content {
+	        max-width: {{ section.settings.content_max_width }}px;
+	        min-width: {{ section.settings.content_min_width }}px;
+	    }
+	    {% else %}
+	    .simple-{{ section.id }} .simple-block-content {
+	        max-width: fit-content;
+	        width: fit-content;
+	        max-height: fit-content;
+	        height: fit-content;
+	    }
+	    .simple-{{ section.id }} .simple-block-content h2 {
+	        white-space: nowrap;
+	    }
+	    {% endif %}
+	}
+
+	.simple-{{ section.id }}.full > .simple-media {
+	    width: 100%;
+	}
+
+	@media screen and ( min-width: 750px ) {
+
+	    .simple-{{ section.id }} {
+	        position: relative;
+	        max-width: {{ section.settings.section_max_width }}%;
+	    }
+	}
+
+	@media screen and ( max-width: 749px ) {
+
+	    .simple-{{ section.id }} .simple-block.simple-media {
+	        width: 100%;
+	    }
+	}
+
+	{%- if section.settings.section_height == "550" or section.settings.section_height == "700" or section.settings.section_height == "950" -%}
+
+	    @media screen and ( min-width: 750px ) {
+
+	        .simple-{{ section.id }} {
+	            height: {{ section.settings.section_height }}px;
+	            display: flex;
+	        }
+
+	        .simple-block > video {
+	            position: relative;
+	            object-fit: cover;
+	            height: -webkit-fill-available;
+	            width: -webkit-fill-available;
+	            max-width: unset;
+	            left: 50%;
+	            transform: translateX(-50%);
+	        }
+	    }
+
+	{%- endif -%}
+
+	{%- if section.settings.section_height == "full" -%}
+
+	    @media screen and ( min-width: 750px ) {
+
+	        .simple-{{ section.id }} {
+	            height: 100vh;
+	        }
+
+	        .simple-{{ section.id }} .simple-block > video {
+	            position: relative;
+	            object-fit: cover;
+	            height: -webkit-fill-available;
+	            width: -webkit-fill-available;
+	            height: 100%;
+	        }
+	    }
+
+	{% endif %}
+
+	{%- if section.settings.section_height == 'adapt' -%}
+
+	    @media screen and (max-width: 749px) {
+	        .simple-{{ section.id }} .simple-media::before {
+	            {% comment %} padding-bottom: 56.25%; /* 16:9 */ {% endcomment %}
+	            padding-bottom: 68%;
+	            {% comment %} padding-bottom: {{ 1 | divided_by: section.settings.video_url.aspect_ratio | times: 100 }}%; {% endcomment %}
+	            content: '';
+	            display: block;
+	        }
+	    }
+
+	    @media screen and (min-width: 750px) {
+	        .simple-{{ section.id }} .simple-media::before {
+	            padding-bottom: 56.25%; /* 16:9 */
+	            {% comment %} padding-bottom: {{ 1 | divided_by: section.settings.video_url.aspect_ratio | times: 100 }}%; {% endcomment %}
+	            content: '';
+	            display: block;
+	        }
+	    }
+
+	    .simple-{{ section.id }}::after {
+	        opacity: {{ section.settings.video_overlay_opacity | divided_by: 100.0 }};
+	    }
+
+	    #mainVideo{{ section.id | remove: "template--" }} {
+	        display: block;
+	        max-width: 100%;
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        height: auto;
+	        width: 100%;
+	        transform: translate(-50%, -50%);
+	    }
+
+	    @media screen and (max-width: 750px) {
+	        #mainVideo{{ section.id | remove: "template--" }} {
+	            display: block;
+	            max-width: 100%;
+	            position: absolute;
+	            top: 50%;
+	            left: 50%;
+	            height: auto;
+	            width: 100%;
+	            min-width: 140%;
+	            transform: translate(-50%, -50%);
+	        }
+	    }
+
+	{%- endif -%}
+
+	/* content styles */
+
+	.simple-{{ section.id }} .simple-block.content {
+	    text-align: {{ section.settings.text_position_mobile }};
+	}
+
+	@media screen and ( min-width: 750px ) {
+
+	    .simple-{{ section.id }} .simple-block.content {
+	        text-align: {{ section.settings.text_position }};
+	    }
+	}
+
+	/* media */
+
+	@media screen and ( min-width: 750px ) {
+	    .simple-{{ section.id }} .simple-block.simple-media {
+	        padding-left: {{ section.settings.media_margin_left }}px;
+	        padding-right: {{ section.settings.media_margin_right }}px;
+	    }
+	}
+
+	{%- if section.settings.enable_max_media_width -%}
+
+	    .simple-{{ section.id }} .simple-media video {
+	        max-width: {{ section.settings.max_media_width }}px;
+	    }
+
+	    .simple-{{ section.id }} .simple-media video {
+	        width: {{ section.settings.media_width }}%;
+	    }
+
+	{%- endif -%}
+</style>
+
+{% comment %} CONTENT {% endcomment %}
+
+<div
+	class='simple simple-{{ section.id }} color-{{ section.settings.color_scheme }} flx{% if section.settings.media_position == 'reverse' %} d-rr{% endif %} m-vrt{% if section.settings.reverse_mobile != true %} m-cr{% endif %} {{ section.settings.media_size }}'
+	style='background-color: {{ section.settings.section_bg_color }};'
+>
+	<div
+		class='
+			hosted-video simple-block simple-media d-flx d-ctr-xy
+			{% if section.settings.enable_animation %} animated {% endif %}
+			 delay-{{ section.settings.animation_delay }}ms
+			{{ section.settings.animation_speed }}
+		'
+		data-tca='
+			if:     {{ section.settings.animation_trigger_1 }},
+			{% if section.settings.animation_trigger_1 == 'scroll' %}on: window,{% endif %}
+			do: {% if section.settings.animation_type_out_1 == 'none' %}{{ section.settings.animation_type_1 }}{% elsif section.settings.animation_type_1 == 'none' %}{{ section.settings.animation_type_out_1 }}{% endif %},
+			before: scrollReveal
+			{% if section.settings.animation_once_1 != true %}, after: removeAnim {% endif %};
+			if:     {{ section.settings.animation_trigger_2 }},
+			{% if section.settings.animation_trigger_2 == 'scroll' %}on: window,{% endif %}
+			do: {% if section.settings.animation_type_out_2 == 'none' %}{{ section.settings.animation_type_2 }}{% elsif section.settings.animation_type_2 == 'none' %}{{ section.settings.animation_type_out_2 }}{% endif %}
+			{% if section.settings.animation_once_2 != true %}, after: removeAnim {% endif %};
+		'
+	>
+		{%- if section.settings.video_url != empty -%}
+			{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+			<video
+				id='mainVideo{{ section.id | remove: "template--" }}'
+				{% if section.settings.muted == true %}
+					muted
+				{% endif %}
+				{% if section.settings.autoplay == true %}
+					autoplay
+				{% endif %}
+				{% if section.settings.loop == true %}
+					loop
+				{% endif %}
+				{% if section.settings.playsinline == true %}
+					playsinline
+				{% endif %}
+				{% if section.settings.autobuffer == true %}
+					autobuffer
+				{% endif %}
+				{% if section.settings.preload == true %}
+					preload
+				{% endif %}
+				{% if section.settings.enable_lazyload %}
+					loading='lazy'
+				{% endif %}
+				{% if section.settings.poster != blank %}
+					poster='{{ section.settings.poster | image_url: width: 1500 }}'
+				{% endif %}
+			>
+				<source src='{{ section.settings.video_url }}' type='video/mp4'>
+			</video>
+		{%- else -%}
+			{{ 'image' | placeholder_svg_tag: 'placeholder-image' }}
+			{% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+		{%- endif -%}
+
+		{% if section.settings.controls == true %}
+			{% render 'video-controls', section_id: section.id, autoplay: section.settings.autoplay, muted: section.settings.muted, position: section.settings.controls_position %}
+		{% endif %}
+	</div>
+
+	<div class='simple-block content flx d-ctr-xy'>
+		<div class='simple-block-content {{ section.settings.content_padding_desktop }} {{ section.settings.content_padding_mobile }}'>
+			{%- for block in section.blocks -%}
+				{%- case block.type -%}
+					{%- when 'heading' -%}
+						<h2
+							{{ block.shopify_attributes }}
+							class='
+								{{ block.settings.heading_size }} {{ block.settings.heading_style }} mt0 {{ block.settings.heading_margin_bottom }}
+								{% if block.settings.enable_animation %} animated {% endif %}
+								 delay-{{ block.settings.animation_delay }}ms
+								{{ block.settings.animation_speed }}
+							'
+							data-tca='
+								if:     {{ block.settings.animation_trigger_1 }},
+								{% if block.settings.animation_trigger_1 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_1 == 'none' %}{{ block.settings.animation_type_1 }}{% elsif block.settings.animation_type_1 == 'none' %}{{ block.settings.animation_type_out_1 }}{% endif %},
+								before: scrollReveal
+								{% if block.settings.animation_once_1 != true %}, after: removeAnim {% endif %};
+								if:     {{ block.settings.animation_trigger_2 }},
+								{% if block.settings.animation_trigger_2 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_2 == 'none' %}{{ block.settings.animation_type_2 }}{% elsif block.settings.animation_type_2 == 'none' %}{{ block.settings.animation_type_out_2 }}{% endif %}
+								{% if block.settings.animation_once_2 != true %}, after: removeAnim {% endif %};
+							'
+						>
+							{{ block.settings.heading }}
+						</h2>
+					{%- when 'text' -%}
+						<div
+							{{ block.shopify_attributes }}
+							class='
+								rich-text__text rte {{ block.settings.paragraph_style }} {{ block.settings.paragraph_margin_bottom }}
+								{% if block.settings.enable_animation %} animated {% endif %}
+								 delay-{{ block.settings.animation_delay }}ms
+								{{ block.settings.animation_speed }}
+							'
+							data-tca='
+								if:     {{ block.settings.animation_trigger_1 }},
+								{% if block.settings.animation_trigger_1 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_1 == 'none' %}{{ block.settings.animation_type_1 }}{% elsif block.settings.animation_type_1 == 'none' %}{{ block.settings.animation_type_out_1 }}{% endif %},
+								before: scrollReveal
+								{% if block.settings.animation_once_1 != true %}, after: removeAnim {% endif %};
+								if:     {{ block.settings.animation_trigger_2 }},
+								{% if block.settings.animation_trigger_2 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_2 == 'none' %}{{ block.settings.animation_type_2 }}{% elsif block.settings.animation_type_2 == 'none' %}{{ block.settings.animation_type_out_2 }}{% endif %}
+								{% if block.settings.animation_once_2 != true %}, after: removeAnim {% endif %};
+							'
+						>
+							{{ block.settings.text }}
+						</div>
+					{%- when 'buttons' -%}
+						<div
+							{{ block.shopify_attributes }}
+							class='
+								rich-text__buttons
+								{% if block.settings.enable_animation %} animated {% endif %}
+								 delay-{{ block.settings.animation_delay }}ms
+								{{ block.settings.animation_speed }}
+							'
+							data-tca='
+								if:     {{ block.settings.animation_trigger_1 }},
+								{% if block.settings.animation_trigger_1 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_1 == 'none' %}{{ block.settings.animation_type_1 }}{% elsif block.settings.animation_type_1 == 'none' %}{{ block.settings.animation_type_out_1 }}{% endif %},
+								before: scrollReveal
+								{% if block.settings.animation_once_1 != true %}, after: removeAnim {% endif %};
+								if:     {{ block.settings.animation_trigger_2 }},
+								{% if block.settings.animation_trigger_2 == 'scroll' %}on: window,{% endif %}
+								do: {% if block.settings.animation_type_out_2 == 'none' %}{{ block.settings.animation_type_2 }}{% elsif block.settings.animation_type_2 == 'none' %}{{ block.settings.animation_type_out_2 }}{% endif %}
+								{% if block.settings.animation_once_2 != true %}, after: removeAnim {% endif %};
+							'
+						>
+							{%- if block.settings.button_label_1 != blank -%}
+								<a
+									data-tca='if: click, do: zoomOut'
+									{{ block.shopify_attributes }}
+									{% if block.settings.button_link_1 == blank %}
+										role='link' aria-disabled='true'
+									{% else %}
+										href='{{ block.settings.button_link_1 }}'
+									{% endif %}
+									class='button animated {% if block.settings.button_label_2 != blank %} mr20{% endif %}{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}'
+								>
+									{{ block.settings.button_label_1 | escape }}
+								</a>
+							{%- endif -%}
+							{%- if block.settings.button_label_2 != blank -%}
+								<a
+									data-tca='if: click, do: zoomOut'
+									{% if block.settings.button_link_2 == blank %}
+										role='link' aria-disabled='true'
+									{% else %}
+										href='{{ block.settings.button_link_2 }}'
+									{% endif %}
+									class='button animated{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}'
+								>
+									{{- block.settings.button_label_2 | escape -}}
+								</a>
+							{%- endif -%}
+						</div>
+				{%- endcase -%}
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+{% comment %} SCHEMA {% endcomment %}
+
+{% schema %}
+	{
+	    "name": "Featured Video",
+	    "class": "featured-simple",
+	    "settings": [
+	        {
+	            "type": "header",
+	            "content": "Section specific"
+	        },
+	        {
+	            "type": "select",
+	            "id": "color_scheme",
+	            "options": [
+	                {
+	                    "value": "accent-1",
+	                    "label": "t:sections.all.colors.accent_1.label"
+	                },
+	                {
+	                    "value": "accent-2",
+	                    "label": "t:sections.all.colors.accent_2.label"
+	                },
+	                {
+	                    "value": "background-1",
+	                    "label": "t:sections.all.colors.background_1.label"
+	                },
+	                {
+	                    "value": "background-2",
+	                    "label": "t:sections.all.colors.background_2.label"
+	                },
+	                {
+	                    "value": "inverse",
+	                    "label": "t:sections.all.colors.inverse.label"
+	                },
+	                {
+	                    "value": "transparent",
+	                    "label": "No background"
+	                }
+	            ],
+	            "default": "background-1",
+	            "label": "t:sections.all.colors.label",
+	            "info": "t:sections.image-banner.settings.color_scheme.info"
+	        },
+	        {
+	            "type": "color",
+	            "id": "section_bg_color",
+	            "label": "Section background color",
+	            "default": "#ffffff"
+	        },
+	        {
+	            "type": "header",
+	            "content": "Section layout",
+	            "info": "In this section you can edit section specific attributes. Feel free to play around and test different combinations!"
+	        },
+	        {
+	            "type": "range",
+	            "id": "section_max_width",
+	            "min": 0,
+	            "max": 100,
+	            "step": 1,
+	            "unit": "%",
+	            "label": "Section width",
+	            "default": 100
+	        },
+	        {
+	            "type": "select",
+	            "id": "section_height",
+	            "options": [
+	                {
+	                    "value": "full",
+	                    "label": "Full screen"
+	                },
+	                {
+	                    "value": "adapt",
+	                    "label": "Adapt"
+	                },
+	                {
+	                    "value": "950",
+	                    "label": "Large"
+	                },
+	                {
+	                    "value": "700",
+	                    "label": "Medium"
+	                },
+	                {
+	                    "value": "550",
+	                    "label": "Small"
+	                }
+	            ],
+	            "default": "adapt",
+	            "label": "Section height"
+	        },
+	        {
+	            "type": "select",
+	            "id": "media_position",
+	            "options": [
+	                {
+	                    "value": "normal",
+	                    "label": "Left"
+	                },
+	                {
+	                    "value": "reverse",
+	                    "label": "Right"
+	                }
+	            ],
+	            "default": "normal",
+	            "label": "Media position"
+	        },
+	        {
+	            "type": "select",
+	            "id": "media_size",
+	            "options": [
+	                {
+	                    "value": "small",
+	                    "label": "30%"
+	                },
+	                {
+	                    "value": "medium",
+	                    "label": "50%"
+	                },
+	                {
+	                    "value": "large",
+	                    "label": "70%"
+	                },
+	                {
+	                    "value": "full",
+	                    "label": "100%"
+	                }
+	            ],
+	            "default": "large",
+	            "label": "Media size"
+	        },
+	        {
+	            "type": "header",
+	            "content": "Section padding"
+	        },
+	        {
+	            "type": "range",
+	            "id": "padding_top",
+	            "min": 0,
+	            "max": 100,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Top padding",
+	            "default": 0
+	        },
+	        {
+	            "type": "range",
+	            "id": "padding_bottom",
+	            "min": 0,
+	            "max": 100,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Bottom padding",
+	            "default": 0
+	        },
+	        {
+	            "type": "header",
+	            "content": "Section inner padding"
+	        },
+	        {
+	            "type": "range",
+	            "id": "inner_padding_top",
+	            "min": 0,
+	            "max": 100,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Top padding",
+	            "default": 0
+	        },
+	        {
+	            "type": "range",
+	            "id": "inner_padding_bottom",
+	            "min": 0,
+	            "max": 100,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Bottom padding",
+	            "default": 0
+	        },
+	        {
+	            "type": "header",
+	            "content": "Video"
+	        },
+	        {
+	            "type": "url",
+	            "id": "video_url",
+	            "label": "Video"
+	        },
+	        {
+	            "type": "header",
+	            "content": "Video options"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "autoplay",
+	            "default": true,
+	            "label": "Autoplay"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "loop",
+	            "default": true,
+	            "label": "Loop"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "muted",
+	            "default": true,
+	            "label": "Muted"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "playsinline",
+	            "default": true,
+	            "label": "Plays inline"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "autobuffer",
+	            "default": true,
+	            "label": "Auto buffer"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "preload",
+	            "default": true,
+	            "label": "Preload"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "controls",
+	            "default": false,
+	            "label": "Controls"
+	        },
+	        {
+	            "type": "select",
+	            "id": "controls_position",
+	            "options": [
+	                {
+	                    "value": "top-left",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+	                },
+	                {
+	                    "value": "top-center",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+	                },
+	                {
+	                    "value": "top-right",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+	                },
+	                {
+	                    "value": "middle-left",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+	                },
+	                {
+	                    "value": "middle-center",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+	                },
+	                {
+	                    "value": "middle-right",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+	                },
+	                {
+	                    "value": "bottom-left",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+	                },
+	                {
+	                    "value": "bottom-center",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+	                },
+	                {
+	                    "value": "bottom-right",
+	                    "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+	                }
+	            ],
+	            "default": "bottom-center",
+	            "label": "Controls position"
+	        },
+	        {
+	            "type": "range",
+	            "id": "video_overlay_opacity",
+	            "min": 0,
+	            "max": 100,
+	            "step": 10,
+	            "unit": "%",
+	            "label": "Video overlay opacity",
+	            "default": 0
+	        },
+	        {
+	            "type": "header",
+	            "content": "Media options",
+	            "info": "Video margins options. (desktop only)"
+	        },
+	        {
+	            "type": "range",
+	            "id": "media_margin_left",
+	            "min": 0,
+	            "max": 200,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Media margin left",
+	            "default": 0
+	        },
+	        {
+	            "type": "range",
+	            "id": "media_margin_right",
+	            "min": 0,
+	            "max": 200,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Media margin right",
+	            "default": 0
+	        },
+	        {
+	            "type": "range",
+	            "id": "media_margin_top",
+	            "min": 0,
+	            "max": 200,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Media margin top",
+	            "default": 0
+	        },
+	        {
+	            "type": "range",
+	            "id": "media_margin_bottom",
+	            "min": 0,
+	            "max": 200,
+	            "step": 4,
+	            "unit": "px",
+	            "label": "Media margin bottom",
+	            "default": 0
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_max_media_width",
+	            "label": "Enable max media size",
+	            "info": "Enable setting the max width of the media.",
+	            "default": false
+	        },
+	        {
+	            "type": "range",
+	            "id": "max_media_width",
+	            "min": 200,
+	            "max": 2000,
+	            "step": 20,
+	            "unit": "px",
+	            "label": "Max media width",
+	            "default": 1100
+	        },
+	        {
+	            "type": "range",
+	            "id": "media_width",
+	            "min": 0,
+	            "max": 100,
+	            "step": 1,
+	            "unit": "%",
+	            "label": "Max media width",
+	            "default": 100
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_center_media",
+	            "label": "Center media",
+	            "info": "Centers the media if max width enabled.",
+	            "default": false
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_lazyload",
+	            "default": true,
+	            "label": "Enable lazy load",
+	            "info": "Recommended off when section is above the fold for performance."
+	        },
+	        {
+	            "type": "header",
+	            "content": "Content",
+	            "info": "Content input and settings."
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_max_width",
+	            "min": 200,
+	            "max": 1400,
+	            "step": 20,
+	            "unit": "px",
+	            "label": "Max content width",
+	            "default": 800
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_min_width",
+	            "min": 200,
+	            "max": 1400,
+	            "step": 20,
+	            "unit": "px",
+	            "label": "Min content width",
+	            "default": 800
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "content_fit",
+	            "label": "Enable fit content",
+	            "info": "This options will override max and min content width and height.",
+	            "default": false
+	        },
+	        {
+	            "type": "select",
+	            "id": "text_position",
+	            "options": [
+	                {
+	                    "value": "left",
+	                    "label": "Left"
+	                },
+	                {
+	                    "value": "center",
+	                    "label": "Center"
+	                },
+	                {
+	                    "value": "right",
+	                    "label": "Right"
+	                }
+	            ],
+	            "default": "left",
+	            "label": "Content alignment"
+	        },
+	        {
+	            "type": "select",
+	            "id": "text_position_mobile",
+	            "options": [
+	                {
+	                    "value": "left",
+	                    "label": "Left"
+	                },
+	                {
+	                    "value": "center",
+	                    "label": "Center"
+	                },
+	                {
+	                    "value": "right",
+	                    "label": "Right"
+	                }
+	            ],
+	            "default": "center",
+	            "label": "Content alignment (mobile)"
+	        },
+	        {
+	            "type": "select",
+	            "id": "content_padding_desktop",
+	            "options": [
+	                {
+	                    "value": "p0",
+	                    "label": "None"
+	                },
+	                {
+	                    "value": "p20",
+	                    "label": "Small"
+	                },
+	                {
+	                    "value": "p40",
+	                    "label": "Medium"
+	                },
+	                {
+	                    "value": "p60",
+	                    "label": "Large"
+	                }
+	            ],
+	            "default": "p60",
+	            "label": "Content padding (desktop)"
+	        },
+	        {
+	            "type": "select",
+	            "id": "content_padding_mobile",
+	            "options": [
+	                {
+	                    "value": "m-p0",
+	                    "label": "None"
+	                },
+	                {
+	                    "value": "m-p20",
+	                    "label": "Small"
+	                },
+	                {
+	                    "value": "m-p40",
+	                    "label": "Medium"
+	                },
+	                {
+	                    "value": "m-p60",
+	                    "label": "Large"
+	                }
+	            ],
+	            "default": "m-p20",
+	            "label": "Content padding (mobile)"
+	        },
+	        {
+	            "type": "paragraph",
+	            "content": "Enable to let you position the content anywhere in the section container."
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_absolute",
+	            "default": true,
+	            "label": "Absolute positioning"
+	        },
+	        {
+	            "type": "select",
+	            "id": "mobile_positioning",
+	            "options": [
+	                {
+	                    "value": "unset",
+	                    "label": "Unset (use desktop values)"
+	                },
+	                {
+	                    "value": "centered_overlay",
+	                    "label": "Centered over media"
+	                },
+	                {
+	                    "value": "centered_after",
+	                    "label": "Block"
+	                }
+	            ],
+	            "default": "unset",
+	            "label": "Mobile positioning"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "reverse_mobile",
+	            "default": true,
+	            "label": "Reverse order (mobile)",
+	            "info": "Works when mobile positioning is set to block, it will show before or after the media."
+	        },
+	        {
+	            "type": "paragraph",
+	            "content": "Vertical positioning, select either to set distance from the top or bottom of the container."
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_distance_top",
+	            "default": true,
+	            "label": "Enable distance top"
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_top",
+	            "min": 0,
+	            "max": 100,
+	            "step": 2,
+	            "unit": "%",
+	            "label": "Distance top",
+	            "default": 50
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_distance_bottom",
+	            "default": true,
+	            "label": "Enable distance bottom"
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_bottom",
+	            "min": 0,
+	            "max": 100,
+	            "step": 2,
+	            "unit": "%",
+	            "label": "Distance bottom",
+	            "default": 50
+	        },
+	        {
+	            "type": "paragraph",
+	            "content": "Horizontal positioning, select either to set distance from the left or right of the container."
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_distance_left",
+	            "default": false,
+	            "label": "Enable distance left"
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_left",
+	            "min": 0,
+	            "max": 100,
+	            "step": 2,
+	            "unit": "%",
+	            "label": "Distance left",
+	            "default": 50
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_distance_right",
+	            "default": false,
+	            "label": "Enable distance right"
+	        },
+	        {
+	            "type": "range",
+	            "id": "content_right",
+	            "min": 0,
+	            "max": 100,
+	            "step": 2,
+	            "unit": "%",
+	            "label": "Distance right",
+	            "default": 50
+	        },
+	        {
+	            "type": "header",
+	            "content": "Animation settings",
+	            "info": "Set up to two animations, avoid using (out) type animation when using onscroll as they will dissapear. Instead try for trigger, onclick."
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "enable_animation",
+	            "label": "Enable animation",
+	            "default": true
+	        },
+	        {
+	            "type": "range",
+	            "id": "animation_delay",
+	            "min": 0,
+	            "max": 5000,
+	            "step": 100,
+	            "unit": "ms",
+	            "label": "Animation delay",
+	            "default": 0
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_speed",
+	            "options": [
+	                {
+	                    "value": "slower",
+	                    "label": "Slower"
+	                },
+	                {
+	                    "value": "slow",
+	                    "label": "Slow"
+	                },
+	                {
+	                    "value": "normal",
+	                    "label": "Normal"
+	                },
+	                {
+	                    "value": "fast",
+	                    "label": "Fast"
+	                },
+	                {
+	                    "value": "faster",
+	                    "label": "Faster"
+	                }
+	            ],
+	            "default": "normal",
+	            "label": "Animation speed"
+	        },
+	        {
+	            "type": "header",
+	            "content": "Animation 1"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "animation_once_1",
+	            "label": "Animate only once",
+	            "default": true
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_trigger_1",
+	            "options": [
+	                {
+	                    "value": "click",
+	                    "label": "click"
+	                },
+	                {
+	                    "value": "scroll",
+	                    "label": "scroll"
+	                },
+	                {
+	                    "value": "focus",
+	                    "label": "focus"
+	                },
+	                {
+	                    "value": "mouseenter",
+	                    "label": "mouseenter"
+	                },
+	                {
+	                    "value": "mouseleave",
+	                    "label": "mouseleave"
+	                },
+	                {
+	                    "value": "none",
+	                    "label": "none"
+	                }
+	            ],
+	            "default": "scroll",
+	            "label": "Animation 1 trigger"
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_type_1",
+	            "options": [
+	                {
+	                    "value": "none",
+	                    "label": "none (use out)"
+	                },
+	                {
+	                    "value": "flash",
+	                    "label": "flash"
+	                },
+	                {
+	                    "value": "pulse",
+	                    "label": "pulse"
+	                },
+	                {
+	                    "value": "backInDown",
+	                    "label": "backInDown"
+	                },
+	                {
+	                    "value": "backInLeft",
+	                    "label": "backInLeft"
+	                },
+	                {
+	                    "value": "backInRight",
+	                    "label": "backInRight"
+	                },
+	                {
+	                    "value": "backInUp",
+	                    "label": "backInUp"
+	                },
+	                {
+	                    "value": "fadeIn",
+	                    "label": "fadeIn"
+	                },
+	                {
+	                    "value": "fadeInDown",
+	                    "label": "fadeInDown"
+	                },
+	                {
+	                    "value": "fadeInDownBig",
+	                    "label": "fadeInDownBig"
+	                },
+	                {
+	                    "value": "fadeInLeft",
+	                    "label": "fadeInLeft"
+	                },
+	                {
+	                    "value": "fadeInLeftBig",
+	                    "label": "fadeInLeftBig"
+	                },
+	                {
+	                    "value": "fadeInRight",
+	                    "label": "fadeInRight"
+	                },
+	                {
+	                    "value": "fadeInRightBig",
+	                    "label": "fadeInRightBig"
+	                },
+	                {
+	                    "value": "fadeInUp",
+	                    "label": "fadeInUp"
+	                },
+	                {
+	                    "value": "fadeInUpBig",
+	                    "label": "fadeInUpBig"
+	                },
+	                {
+	                    "value": "fadeInTopLeft",
+	                    "label": "fadeInTopLeft"
+	                },
+	                {
+	                    "value": "fadeInTopRight",
+	                    "label": "fadeInTopRight"
+	                },
+	                {
+	                    "value": "fadeInBottomLeft",
+	                    "label": "fadeInBottomLeft"
+	                },
+	                {
+	                    "value": "fadeInBottomRight",
+	                    "label": "fadeInBottomRight"
+	                },
+	                {
+	                    "value": "zoomIn",
+	                    "label": "zoomIn"
+	                },
+	                {
+	                    "value": "zoomInDown",
+	                    "label": "zoomInDown"
+	                },
+	                {
+	                    "value": "zoomInLeft",
+	                    "label": "zoomInLeft"
+	                },
+	                {
+	                    "value": "zoomInRight",
+	                    "label": "zoomInRight"
+	                },
+	                {
+	                    "value": "zoomInUp",
+	                    "label": "zoomInUp"
+	                },
+	                {
+	                    "value": "slideInDown",
+	                    "label": "slideInDown"
+	                },
+	                {
+	                    "value": "slideInLeft",
+	                    "label": "slideInLeft"
+	                },
+	                {
+	                    "value": "slideInRight",
+	                    "label": "slideInRight"
+	                },
+	                {
+	                    "value": "slideInUp",
+	                    "label": "slideInUp"
+	                }
+	            ],
+	            "default": "zoomIn",
+	            "label": "Animation 1 type (in)"
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_type_out_1",
+	            "options": [
+	                {
+	                    "value": "none",
+	                    "label": "none (use in)"
+	                },
+	                {
+	                    "value": "backOutDown",
+	                    "label": "backOutDown"
+	                },
+	                {
+	                    "value": "backOutLeft",
+	                    "label": "backOutLeft"
+	                },
+	                {
+	                    "value": "backOutRight",
+	                    "label": "backOutRight"
+	                },
+	                {
+	                    "value": "backOutUp",
+	                    "label": "backOutUp"
+	                },
+	                {
+	                    "value": "fadeOut",
+	                    "label": "fadeOut"
+	                },
+	                {
+	                    "value": "fadeOutDown",
+	                    "label": "fadeOutDown"
+	                },
+	                {
+	                    "value": "fadeOutDownBig",
+	                    "label": "fadeOutDownBig"
+	                },
+	                {
+	                    "value": "fadeOutLeft",
+	                    "label": "fadeOutLeft"
+	                },
+	                {
+	                    "value": "fadeOutLeftBig",
+	                    "label": "fadeOutLeftBig"
+	                },
+	                {
+	                    "value": "fadeOutRight",
+	                    "label": "fadeOutRight"
+	                },
+	                {
+	                    "value": "fadeOutRightBig",
+	                    "label": "fadeOutRightBig"
+	                },
+	                {
+	                    "value": "fadeOutUp",
+	                    "label": "fadeOutUp"
+	                },
+	                {
+	                    "value": "fadeOutUpBig",
+	                    "label": "fadeOutUpBig"
+	                },
+	                {
+	                    "value": "fadeOutTopLeft",
+	                    "label": "fadeOutTopLeft"
+	                },
+	                {
+	                    "value": "fadeOutTopRight",
+	                    "label": "fadeOutTopRight"
+	                },
+	                {
+	                    "value": "fadeOutBottomRight",
+	                    "label": "fadeOutBottomRight"
+	                },
+	                {
+	                    "value": "fadeOutBottomLeft",
+	                    "label": "fadeOutBottomLeft"
+	                },
+	                {
+	                    "value": "zoomOut",
+	                    "label": "zoomOut"
+	                },
+	                {
+	                    "value": "zoomOutDown",
+	                    "label": "zoomOutDown"
+	                },
+	                {
+	                    "value": "zoomOutLeft",
+	                    "label": "zoomOutLeft"
+	                },
+	                {
+	                    "value": "zoomOutRight",
+	                    "label": "zoomOutRight"
+	                },
+	                {
+	                    "value": "zoomOutUp",
+	                    "label": "zoomOutUp"
+	                },
+	                {
+	                    "value": "slideOutDown",
+	                    "label": "slideOutDown"
+	                },
+	                {
+	                    "value": "slideOutLeft",
+	                    "label": "slideOutLeft"
+	                },
+	                {
+	                    "value": "slideOutRight",
+	                    "label": "slideOutRight"
+	                },
+	                {
+	                    "value": "slideOutUp",
+	                    "label": "slideOutUp"
+	                }
+	            ],
+	            "default": "none",
+	            "label": "Animation 1 type (out)"
+	        },
+	        {
+	            "type": "header",
+	            "content": "Animation 2"
+	        },
+	        {
+	            "type": "checkbox",
+	            "id": "animation_once_2",
+	            "label": "Animate only once",
+	            "default": true
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_trigger_2",
+	            "options": [
+	                {
+	                    "value": "click",
+	                    "label": "click"
+	                },
+	                {
+	                    "value": "scroll",
+	                    "label": "scroll"
+	                },
+	                {
+	                    "value": "focus",
+	                    "label": "focus"
+	                },
+	                {
+	                    "value": "mouseenter",
+	                    "label": "mouseenter"
+	                },
+	                {
+	                    "value": "mouseleave",
+	                    "label": "mouseleave"
+	                },
+	                {
+	                    "value": "none",
+	                    "label": "none"
+	                }
+	            ],
+	            "default": "click",
+	            "label": "Animation 2 trigger"
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_type_2",
+	            "options": [
+	                {
+	                    "value": "none",
+	                    "label": "none (use out)"
+	                },
+	                {
+	                    "value": "flash",
+	                    "label": "flash"
+	                },
+	                {
+	                    "value": "pulse",
+	                    "label": "pulse"
+	                },
+	                {
+	                    "value": "backInDown",
+	                    "label": "backInDown"
+	                },
+	                {
+	                    "value": "backInLeft",
+	                    "label": "backInLeft"
+	                },
+	                {
+	                    "value": "backInRight",
+	                    "label": "backInRight"
+	                },
+	                {
+	                    "value": "backInUp",
+	                    "label": "backInUp"
+	                },
+	                {
+	                    "value": "fadeIn",
+	                    "label": "fadeIn"
+	                },
+	                {
+	                    "value": "fadeInDown",
+	                    "label": "fadeInDown"
+	                },
+	                {
+	                    "value": "fadeInDownBig",
+	                    "label": "fadeInDownBig"
+	                },
+	                {
+	                    "value": "fadeInLeft",
+	                    "label": "fadeInLeft"
+	                },
+	                {
+	                    "value": "fadeInLeftBig",
+	                    "label": "fadeInLeftBig"
+	                },
+	                {
+	                    "value": "fadeInRight",
+	                    "label": "fadeInRight"
+	                },
+	                {
+	                    "value": "fadeInRightBig",
+	                    "label": "fadeInRightBig"
+	                },
+	                {
+	                    "value": "fadeInUp",
+	                    "label": "fadeInUp"
+	                },
+	                {
+	                    "value": "fadeInUpBig",
+	                    "label": "fadeInUpBig"
+	                },
+	                {
+	                    "value": "fadeInTopLeft",
+	                    "label": "fadeInTopLeft"
+	                },
+	                {
+	                    "value": "fadeInTopRight",
+	                    "label": "fadeInTopRight"
+	                },
+	                {
+	                    "value": "fadeInBottomLeft",
+	                    "label": "fadeInBottomLeft"
+	                },
+	                {
+	                    "value": "fadeInBottomRight",
+	                    "label": "fadeInBottomRight"
+	                },
+	                {
+	                    "value": "zoomIn",
+	                    "label": "zoomIn"
+	                },
+	                {
+	                    "value": "zoomInDown",
+	                    "label": "zoomInDown"
+	                },
+	                {
+	                    "value": "zoomInLeft",
+	                    "label": "zoomInLeft"
+	                },
+	                {
+	                    "value": "zoomInRight",
+	                    "label": "zoomInRight"
+	                },
+	                {
+	                    "value": "zoomInUp",
+	                    "label": "zoomInUp"
+	                },
+	                {
+	                    "value": "slideInDown",
+	                    "label": "slideInDown"
+	                },
+	                {
+	                    "value": "slideInLeft",
+	                    "label": "slideInLeft"
+	                },
+	                {
+	                    "value": "slideInRight",
+	                    "label": "slideInRight"
+	                },
+	                {
+	                    "value": "slideInUp",
+	                    "label": "slideInUp"
+	                }
+	            ],
+	            "default": "none",
+	            "label": "Animation 2 type (in)"
+	        },
+	        {
+	            "type": "select",
+	            "id": "animation_type_out_2",
+	            "options": [
+	                {
+	                    "value": "none",
+	                    "label": "none (use in)"
+	                },
+	                {
+	                    "value": "backOutDown",
+	                    "label": "backOutDown"
+	                },
+	                {
+	                    "value": "backOutLeft",
+	                    "label": "backOutLeft"
+	                },
+	                {
+	                    "value": "backOutRight",
+	                    "label": "backOutRight"
+	                },
+	                {
+	                    "value": "backOutUp",
+	                    "label": "backOutUp"
+	                },
+	                {
+	                    "value": "fadeOut",
+	                    "label": "fadeOut"
+	                },
+	                {
+	                    "value": "fadeOutDown",
+	                    "label": "fadeOutDown"
+	                },
+	                {
+	                    "value": "fadeOutDownBig",
+	                    "label": "fadeOutDownBig"
+	                },
+	                {
+	                    "value": "fadeOutLeft",
+	                    "label": "fadeOutLeft"
+	                },
+	                {
+	                    "value": "fadeOutLeftBig",
+	                    "label": "fadeOutLeftBig"
+	                },
+	                {
+	                    "value": "fadeOutRight",
+	                    "label": "fadeOutRight"
+	                },
+	                {
+	                    "value": "fadeOutRightBig",
+	                    "label": "fadeOutRightBig"
+	                },
+	                {
+	                    "value": "fadeOutUp",
+	                    "label": "fadeOutUp"
+	                },
+	                {
+	                    "value": "fadeOutUpBig",
+	                    "label": "fadeOutUpBig"
+	                },
+	                {
+	                    "value": "fadeOutTopLeft",
+	                    "label": "fadeOutTopLeft"
+	                },
+	                {
+	                    "value": "fadeOutTopRight",
+	                    "label": "fadeOutTopRight"
+	                },
+	                {
+	                    "value": "fadeOutBottomRight",
+	                    "label": "fadeOutBottomRight"
+	                },
+	                {
+	                    "value": "fadeOutBottomLeft",
+	                    "label": "fadeOutBottomLeft"
+	                },
+	                {
+	                    "value": "zoomOut",
+	                    "label": "zoomOut"
+	                },
+	                {
+	                    "value": "zoomOutDown",
+	                    "label": "zoomOutDown"
+	                },
+	                {
+	                    "value": "zoomOutLeft",
+	                    "label": "zoomOutLeft"
+	                },
+	                {
+	                    "value": "zoomOutRight",
+	                    "label": "zoomOutRight"
+	                },
+	                {
+	                    "value": "zoomOutUp",
+	                    "label": "zoomOutUp"
+	                },
+	                {
+	                    "value": "slideOutDown",
+	                    "label": "slideOutDown"
+	                },
+	                {
+	                    "value": "slideOutLeft",
+	                    "label": "slideOutLeft"
+	                },
+	                {
+	                    "value": "slideOutRight",
+	                    "label": "slideOutRight"
+	                },
+	                {
+	                    "value": "slideOutUp",
+	                    "label": "slideOutUp"
+	                }
+	            ],
+	            "default": "none",
+	            "label": "Animation 2 type (out)"
+	        }
+	    ],
+	    "blocks": [
+	        {
+	            "type": "heading",
+	            "name": "Header",
+	            "limit": 1,
+	            "settings": [
+	                {
+	                    "type": "text",
+	                    "id": "heading",
+	                    "default": "Talk about your brand",
+	                    "label": "Section heading"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "heading_size",
+	                    "options": [
+	                        {
+	                            "value": "header-sm",
+	                            "label": "t:sections.all.heading_size.options__1.label"
+	                        },
+	                        {
+	                            "value": "header-md",
+	                            "label": "t:sections.all.heading_size.options__2.label"
+	                        },
+	                        {
+	                            "value": "header-lg",
+	                            "label": "t:sections.all.heading_size.options__3.label"
+	                        }
+	                    ],
+	                    "default": "header-lg",
+	                    "label": "t:sections.all.heading_size.label"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "heading_style",
+	                    "options": [
+	                        {
+	                            "value": "wgt-400",
+	                            "label": "Thin"
+	                        },
+	                        {
+	                            "value": "wgt-500",
+	                            "label": "Medium"
+	                        },
+	                        {
+	                            "value": "wgt-600",
+	                            "label": "Bold"
+	                        }
+	                    ],
+	                    "default": "wgt-500",
+	                    "label": "Heading style"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "heading_margin_bottom",
+	                    "options": [
+	                        {
+	                            "value": "mb0",
+	                            "label": "none"
+	                        },
+	                        {
+	                            "value": "mb10",
+	                            "label": "1 rem"
+	                        },
+	                        {
+	                            "value": "mb20",
+	                            "label": "2 rem"
+	                        },
+	                        {
+	                            "value": "mb30",
+	                            "label": "3 rem"
+	                        },
+	                        {
+	                            "value": "mb40",
+	                            "label": "4 rem"
+	                        }
+	                    ],
+	                    "default": "mb10",
+	                    "label": "Margin bottom"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation settings",
+	                    "info": "Set up to two animations, avoid using (out) type animation when using onscroll as they will dissapear. Instead try for trigger, onclick."
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "enable_animation",
+	                    "label": "Enable animation",
+	                    "default": true
+	                },
+	                {
+	                    "type": "range",
+	                    "id": "animation_delay",
+	                    "min": 0,
+	                    "max": 5000,
+	                    "step": 100,
+	                    "unit": "ms",
+	                    "label": "Animation delay",
+	                    "default": 0
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_speed",
+	                    "options": [
+	                        {
+	                            "value": "slower",
+	                            "label": "Slower"
+	                        },
+	                        {
+	                            "value": "slow",
+	                            "label": "Slow"
+	                        },
+	                        {
+	                            "value": "normal",
+	                            "label": "Normal"
+	                        },
+	                        {
+	                            "value": "fast",
+	                            "label": "Fast"
+	                        },
+	                        {
+	                            "value": "faster",
+	                            "label": "Faster"
+	                        }
+	                    ],
+	                    "default": "normal",
+	                    "label": "Animation speed"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 1"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_1",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_1",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "scroll",
+	                    "label": "Animation 1 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "fadeIn",
+	                    "label": "Animation 1 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "zoomOut",
+	                    "label": "Animation 1 type (out)"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 2"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_2",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_2",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (out)"
+	                }
+	            ]
+	        },
+	        {
+	            "type": "text",
+	            "name": "t:sections.rich-text.blocks.text.name",
+	            "limit": 1,
+	            "settings": [
+	                {
+	                    "type": "richtext",
+	                    "id": "text",
+	                    "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+	                    "label": "t:sections.rich-text.blocks.text.settings.text.label"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "paragraph_type",
+	                    "options": [
+	                        {
+	                            "value": "normal",
+	                            "label": "Paragraph"
+	                        },
+	                        {
+	                            "value": "featured",
+	                            "label": "Featured paragraph"
+	                        },
+	                        {
+	                            "value": "uppercase",
+	                            "label": "Uppercase notice"
+	                        }
+	                    ],
+	                    "default": "normal",
+	                    "label": "Paragraph type"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "paragraph_style",
+	                    "label": "Paragraph style",
+	                    "default": "wgt-400",
+	                    "options": [
+	                        {
+	                            "value": "wgt-400",
+	                            "label": "Thin"
+	                        },
+	                        {
+	                            "value": "wgt-500",
+	                            "label": "Medium"
+	                        },
+	                        {
+	                            "value": "wgt-600",
+	                            "label": "Bold"
+	                        }
+	                    ]
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "paragraph_margin_bottom",
+	                    "options": [
+	                        {
+	                            "value": "mb0",
+	                            "label": "none"
+	                        },
+	                        {
+	                            "value": "mb10",
+	                            "label": "1 rem"
+	                        },
+	                        {
+	                            "value": "mb20",
+	                            "label": "2 rem"
+	                        },
+	                        {
+	                            "value": "mb30",
+	                            "label": "3 rem"
+	                        },
+	                        {
+	                            "value": "mb40",
+	                            "label": "4 rem"
+	                        }
+	                    ],
+	                    "default": "mb10",
+	                    "label": "Margin bottom"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation settings",
+	                    "info": "Set up to two animations, avoid using (out) type animation when using onscroll as they will dissapear. Instead try for trigger, onclick."
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "enable_animation",
+	                    "label": "Enable animation",
+	                    "default": true
+	                },
+	                {
+	                    "type": "range",
+	                    "id": "animation_delay",
+	                    "min": 0,
+	                    "max": 5000,
+	                    "step": 100,
+	                    "unit": "ms",
+	                    "label": "Animation delay",
+	                    "default": 0
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_speed",
+	                    "options": [
+	                        {
+	                            "value": "slower",
+	                            "label": "Slower"
+	                        },
+	                        {
+	                            "value": "slow",
+	                            "label": "Slow"
+	                        },
+	                        {
+	                            "value": "normal",
+	                            "label": "Normal"
+	                        },
+	                        {
+	                            "value": "fast",
+	                            "label": "Fast"
+	                        },
+	                        {
+	                            "value": "faster",
+	                            "label": "Faster"
+	                        }
+	                    ],
+	                    "default": "normal",
+	                    "label": "Animation speed"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 1"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_1",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_1",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "scroll",
+	                    "label": "Animation 1 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "fadeIn",
+	                    "label": "Animation 1 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "zoomOut",
+	                    "label": "Animation 1 type (out)"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 2"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_2",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_2",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (out)"
+	                }
+	            ]
+	        },
+	        {
+	            "type": "buttons",
+	            "name": "t:sections.rich-text.blocks.buttons.name",
+	            "limit": 1,
+	            "settings": [
+	                {
+	                    "type": "text",
+	                    "id": "button_label_1",
+	                    "default": "Button label",
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
+	                    "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
+	                },
+	                {
+	                    "type": "url",
+	                    "id": "button_link_1",
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_link_1.label"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "button_style_secondary_1",
+	                    "default": false,
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
+	                },
+	                {
+	                    "type": "text",
+	                    "id": "button_label_2",
+	                    "default": "Button label",
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_label_2.label",
+	                    "info": "t:sections.rich-text.blocks.buttons.settings.button_label_2.info"
+	                },
+	                {
+	                    "type": "url",
+	                    "id": "button_link_2",
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_link_2.label"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "button_style_secondary_2",
+	                    "default": false,
+	                    "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation settings",
+	                    "info": "Set up to two animations, avoid using (out) type animation when using onscroll as they will dissapear. Instead try for trigger, onclick."
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "enable_animation",
+	                    "label": "Enable animation",
+	                    "default": true
+	                },
+	                {
+	                    "type": "range",
+	                    "id": "animation_delay",
+	                    "min": 0,
+	                    "max": 5000,
+	                    "step": 100,
+	                    "unit": "ms",
+	                    "label": "Animation delay",
+	                    "default": 0
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_speed",
+	                    "options": [
+	                        {
+	                            "value": "slower",
+	                            "label": "Slower"
+	                        },
+	                        {
+	                            "value": "slow",
+	                            "label": "Slow"
+	                        },
+	                        {
+	                            "value": "normal",
+	                            "label": "Normal"
+	                        },
+	                        {
+	                            "value": "fast",
+	                            "label": "Fast"
+	                        },
+	                        {
+	                            "value": "faster",
+	                            "label": "Faster"
+	                        }
+	                    ],
+	                    "default": "normal",
+	                    "label": "Animation speed"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 1"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_1",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_1",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "scroll",
+	                    "label": "Animation 1 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "fadeIn",
+	                    "label": "Animation 1 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_1",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 1 type (out)"
+	                },
+	                {
+	                    "type": "header",
+	                    "content": "Animation 2"
+	                },
+	                {
+	                    "type": "checkbox",
+	                    "id": "animation_once_2",
+	                    "label": "Animate only once",
+	                    "default": true
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_trigger_2",
+	                    "options": [
+	                        {
+	                            "value": "click",
+	                            "label": "click"
+	                        },
+	                        {
+	                            "value": "scroll",
+	                            "label": "scroll"
+	                        },
+	                        {
+	                            "value": "focus",
+	                            "label": "focus"
+	                        },
+	                        {
+	                            "value": "mouseenter",
+	                            "label": "mouseenter"
+	                        },
+	                        {
+	                            "value": "mouseleave",
+	                            "label": "mouseleave"
+	                        },
+	                        {
+	                            "value": "none",
+	                            "label": "none"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 trigger"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use out)"
+	                        },
+	                        {
+	                            "value": "flash",
+	                            "label": "flash"
+	                        },
+	                        {
+	                            "value": "pulse",
+	                            "label": "pulse"
+	                        },
+	                        {
+	                            "value": "backInDown",
+	                            "label": "backInDown"
+	                        },
+	                        {
+	                            "value": "backInLeft",
+	                            "label": "backInLeft"
+	                        },
+	                        {
+	                            "value": "backInRight",
+	                            "label": "backInRight"
+	                        },
+	                        {
+	                            "value": "backInUp",
+	                            "label": "backInUp"
+	                        },
+	                        {
+	                            "value": "fadeIn",
+	                            "label": "fadeIn"
+	                        },
+	                        {
+	                            "value": "fadeInDown",
+	                            "label": "fadeInDown"
+	                        },
+	                        {
+	                            "value": "fadeInDownBig",
+	                            "label": "fadeInDownBig"
+	                        },
+	                        {
+	                            "value": "fadeInLeft",
+	                            "label": "fadeInLeft"
+	                        },
+	                        {
+	                            "value": "fadeInLeftBig",
+	                            "label": "fadeInLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeInRight",
+	                            "label": "fadeInRight"
+	                        },
+	                        {
+	                            "value": "fadeInRightBig",
+	                            "label": "fadeInRightBig"
+	                        },
+	                        {
+	                            "value": "fadeInUp",
+	                            "label": "fadeInUp"
+	                        },
+	                        {
+	                            "value": "fadeInUpBig",
+	                            "label": "fadeInUpBig"
+	                        },
+	                        {
+	                            "value": "fadeInTopLeft",
+	                            "label": "fadeInTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeInTopRight",
+	                            "label": "fadeInTopRight"
+	                        },
+	                        {
+	                            "value": "fadeInBottomLeft",
+	                            "label": "fadeInBottomLeft"
+	                        },
+	                        {
+	                            "value": "fadeInBottomRight",
+	                            "label": "fadeInBottomRight"
+	                        },
+	                        {
+	                            "value": "zoomIn",
+	                            "label": "zoomIn"
+	                        },
+	                        {
+	                            "value": "zoomInDown",
+	                            "label": "zoomInDown"
+	                        },
+	                        {
+	                            "value": "zoomInLeft",
+	                            "label": "zoomInLeft"
+	                        },
+	                        {
+	                            "value": "zoomInRight",
+	                            "label": "zoomInRight"
+	                        },
+	                        {
+	                            "value": "zoomInUp",
+	                            "label": "zoomInUp"
+	                        },
+	                        {
+	                            "value": "slideInDown",
+	                            "label": "slideInDown"
+	                        },
+	                        {
+	                            "value": "slideInLeft",
+	                            "label": "slideInLeft"
+	                        },
+	                        {
+	                            "value": "slideInRight",
+	                            "label": "slideInRight"
+	                        },
+	                        {
+	                            "value": "slideInUp",
+	                            "label": "slideInUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (in)"
+	                },
+	                {
+	                    "type": "select",
+	                    "id": "animation_type_out_2",
+	                    "options": [
+	                        {
+	                            "value": "none",
+	                            "label": "none (use in)"
+	                        },
+	                        {
+	                            "value": "backOutDown",
+	                            "label": "backOutDown"
+	                        },
+	                        {
+	                            "value": "backOutLeft",
+	                            "label": "backOutLeft"
+	                        },
+	                        {
+	                            "value": "backOutRight",
+	                            "label": "backOutRight"
+	                        },
+	                        {
+	                            "value": "backOutUp",
+	                            "label": "backOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOut",
+	                            "label": "fadeOut"
+	                        },
+	                        {
+	                            "value": "fadeOutDown",
+	                            "label": "fadeOutDown"
+	                        },
+	                        {
+	                            "value": "fadeOutDownBig",
+	                            "label": "fadeOutDownBig"
+	                        },
+	                        {
+	                            "value": "fadeOutLeft",
+	                            "label": "fadeOutLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutLeftBig",
+	                            "label": "fadeOutLeftBig"
+	                        },
+	                        {
+	                            "value": "fadeOutRight",
+	                            "label": "fadeOutRight"
+	                        },
+	                        {
+	                            "value": "fadeOutRightBig",
+	                            "label": "fadeOutRightBig"
+	                        },
+	                        {
+	                            "value": "fadeOutUp",
+	                            "label": "fadeOutUp"
+	                        },
+	                        {
+	                            "value": "fadeOutUpBig",
+	                            "label": "fadeOutUpBig"
+	                        },
+	                        {
+	                            "value": "fadeOutTopLeft",
+	                            "label": "fadeOutTopLeft"
+	                        },
+	                        {
+	                            "value": "fadeOutTopRight",
+	                            "label": "fadeOutTopRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomRight",
+	                            "label": "fadeOutBottomRight"
+	                        },
+	                        {
+	                            "value": "fadeOutBottomLeft",
+	                            "label": "fadeOutBottomLeft"
+	                        },
+	                        {
+	                            "value": "zoomOut",
+	                            "label": "zoomOut"
+	                        },
+	                        {
+	                            "value": "zoomOutDown",
+	                            "label": "zoomOutDown"
+	                        },
+	                        {
+	                            "value": "zoomOutLeft",
+	                            "label": "zoomOutLeft"
+	                        },
+	                        {
+	                            "value": "zoomOutRight",
+	                            "label": "zoomOutRight"
+	                        },
+	                        {
+	                            "value": "zoomOutUp",
+	                            "label": "zoomOutUp"
+	                        },
+	                        {
+	                            "value": "slideOutDown",
+	                            "label": "slideOutDown"
+	                        },
+	                        {
+	                            "value": "slideOutLeft",
+	                            "label": "slideOutLeft"
+	                        },
+	                        {
+	                            "value": "slideOutRight",
+	                            "label": "slideOutRight"
+	                        },
+	                        {
+	                            "value": "slideOutUp",
+	                            "label": "slideOutUp"
+	                        }
+	                    ],
+	                    "default": "none",
+	                    "label": "Animation 2 type (out)"
+	                }
+	            ]
+	        }
+	    ],
+	    "presets": [
+	        {
+	            "name": "Featured Video",
+	            "settings": {}
+	        }
+	    ]
+	}
+{% endschema %}

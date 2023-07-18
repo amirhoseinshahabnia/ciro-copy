@@ -1,0 +1,117 @@
+
+.collection .collection-hero.color-background-1.gradient {
+    display: none;
+}
+
+.collection div#main-collection-filters {
+    display: none;
+}
+
+.collection .card-wrapper {
+/*     background: transparent; */
+}
+
+.collection .card__information {
+    
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.collection .font5.card-information {
+    display: flex;
+}
+
+.collection .price {
+    margin-top: 0 !important;
+}
+
+.collection h3.font5.margno.card__heading.h5 {flex: 0 0 75%;font-size: 14px;font-weight: 600;}
+
+.collection .card__inner.color-background-2.gradient.ratio {
+    margin-top: 16px;
+}
+
+.collection .grid--4-col-desktop .grid__item {
+    margin-bottom: 50px;
+}
+
+.collection .swatches.swatches-type-collections {
+    border: 0px;
+}
+
+.collection .swatch-image.swatch-selector.swatch-allow-animation {
+    border: 0 !important;
+}
+
+.collection .star-set-image {
+    border: 0 !important;
+}
+
+
+.collection .swatch-single.swatch-view-slide {
+    margin: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+
+.collection .grid--2-col-tablet-down .grid__item {
+    width: 100% !important;
+    max-width: 100%;
+}
+
+.collection .swatch-single.swatch-view-slide .swatch-navigable {
+    justify-content: center;
+}
+
+.collection .collection.page-width {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+}
+@media screen and (max-width: 749px) {
+  .collection .grid__item:only-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .collection .slider.slider--tablet {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.collection .loading-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding: 0 1.5rem;
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 750px) {
+  .collection .loading-overlay {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.collection.loading .loading-overlay {
+  display: block;
+}
+
+.collection--empty .title-wrapper {
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+.collection__view-all {
+  margin-top: 2rem;
+}

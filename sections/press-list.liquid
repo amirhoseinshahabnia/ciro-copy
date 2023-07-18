@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="{{ 'section-logo-list.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-logo-list.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="featured-partners {% if section.settings.hide_title == true %}no-title{% endif %} section-{{ section.id }}-padding" style="background-color: {{ section.settings.section_bg }};">
+
+    {% if section.settings.hide_title == false %}
+        <div class="title-wrapper-with-link{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if section.settings.title_align == "center" %} justify-center{% endif %}{% if section.settings.title_align == "right" %} justify-right{% endif %}">
+
+          <h2 class="font3 title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
+
+        </div>
+    {% endif %}
+
+    <div class="featured-partners__content">
+        <ul class="flx">
+            {%- for block in section.blocks -%}
+            <li>
+                {%- if block.settings.image_link -%}
+                <a class="blck" href="{{ block.settings.image_link }}" target="_blank">
+                {%- endif -%}
+                  <img 
+                      class="blck"
+                      srcset="{{ block.settings.img | img_url: '560x' }} 560w"
+                      src="{{ block.settings.img | img_url: '1500x' }}"
+                      alt="{{ block.settings.img.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.img.width }}"
+                      height="{{ block.settings.img.height }}"
+                  >
+                {%- if block.settings.image_link -%}
+                </a>
+                {%- endif -%}
+            </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Press list",
+  "settings": [
+    {
+        "type":"header",
+        "content":"Section options"
+    },
+    {
+        "type":"color",
+        "id":"section_bg",
+        "label":"Section background color",
+        "default":"#ffffff"
+    },
+    {
+        "type":"header",
+        "content":"Title options"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Featured partners",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "default": false,
+      "label": "Hide title"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press list",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ],
+      "settings": {
+
+      }
+    }
+  ]
+}
+{% endschema %}
