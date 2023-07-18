@@ -93,6 +93,52 @@
         "padding_bottom": 0
       }
     },
+    "b0ba7213-de05-4317-8972-05536fe612b2": {
+      "type": "collection-list-ru",
+      "blocks": {
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gold"
+          }
+        }
+      },
+      "block_order": [
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-0",
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-1",
+        "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-2",
+        "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87"
+      ],
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -176,6 +222,7 @@
   "order": [
     "1647552565fa55fb8d",
     "aa290436-ce1a-467c-bcd1-bb9c9ef49e34",
+    "b0ba7213-de05-4317-8972-05536fe612b2",
     "featured_collection",
     "16498135706a271423",
     "165005212099fcbbde"
