@@ -4,44 +4,46 @@
   {% for block in section.blocks %}
     <div class="slider-ctn carousel-cell" {{ block.shopify_attributes }}>
       {% if block.settings.image and block.settings.collection %}
-        <a href={{ block.settings.collection.url }}>{{ block.settings.image | image_url: width: 2048 | image_tag }}</a>
+        <a href="{{ block.settings.collection.url }}">
+          {{- block.settings.image | image_url: width: 2048 | image_tag -}}
+        </a>
       {% endif %}
     </div>
   {% endfor %}
 </div>
 
 <script>
-  $('.js-slick').slick({fade: true, autoplay: true, arrows: false});
+  $('#shopify-section-{{ section.id }} .js-slick').slick({ fade: true, autoplay: true, arrows: false });
 </script>
 
 {% schema %}
-  {
-    "name": "Collection Image Slider",
-    "class": "collection-img-ctn",
-    "tag": "section",
-    "max_blocks": 3,
-    "blocks": [
-      {
-        "name": "Slide",
-        "type": "slide",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          }, {
-            "type": "collection",
-            "id": "collection",
-            "label": "Collection"
-          }
-
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Collection Image Slider"
-      }
-    ]
-  }
+{
+  "name": "Collection Image Slider",
+  "class": "collection-img-ctn",
+  "tag": "section",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Image Slider"
+    }
+  ]
+}
 {% endschema %}
