@@ -1,16 +1,6 @@
 {{ 'collection-img-ctn.css' | asset_url | stylesheet_tag }}
 
-{%- capture flickity_options -%}
-  {
-  "prevNextButtons": false,
-      "pageDots": false,
-      "contain": true,
-      "cellAlign": "left",
-      "groupCells": true,
-      "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
-    }{%- endcapture -%}
-
-<div class="js-flickity" data-flickity='{{ flickity_options }}'>
+<div class="js-slick">
   {% for block in section.blocks %}
     <div class="slider-ctn carousel-cell" {{ block.shopify_attributes }}>
       {% if block.settings.image and block.settings.collection %}
@@ -19,6 +9,10 @@
     </div>
   {% endfor %}
 </div>
+
+<script>
+  $('.js-slick').slick({fade: true, autoplay: true, arrows: false});
+</script>
 
 {% schema %}
   {

@@ -2,6 +2,10 @@
   border: none;
 }
 
+.ru-collection-ctn.grid {
+  column-gap: 30px;
+}
+
 .collection-list {
   margin-top: 0;
   margin-bottom: 0;
@@ -56,11 +60,22 @@
   .collection-list__item a:hover {
     box-shadow: none;
   }
+
+  .ru-collection-ctn.grid {
+    column-gap: 50px;
+  }
 }
 
 @media screen and (max-width: 989px) {
   .collection-list.slider .collection-list__item {
     max-width: 100%;
+  }
+
+  .section-collection-list-ru .grid__item {
+    margin-bottom: 5px;
+  }
+  .section-collection-list-ru .grid__item:last-child {
+    margin-bottom: 0;
   }
 }
 
