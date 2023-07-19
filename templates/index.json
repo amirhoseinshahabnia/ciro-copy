@@ -1,5 +1,30 @@
 {
   "sections": {
+    "1e898299-2b12-4390-9a46-434d28b350d7": {
+      "type": "collection-img-slider",
+      "blocks": {
+        "f5c799c7-3cad-4046-bf27-b8e43610c668": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lyra-collection-ciro-jewelry.jpg",
+            "collection": "gold"
+          }
+        },
+        "cc2eff42-b8a1-4fd2-817b-f51130023cdd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/summer-sparkle-ciro-jewelry_9cba134c-d6db-4573-9b9c-96e8c4281813.jpg",
+            "collection": "gold"
+          }
+        }
+      },
+      "block_order": [
+        "f5c799c7-3cad-4046-bf27-b8e43610c668",
+        "cc2eff42-b8a1-4fd2-817b-f51130023cdd"
+      ],
+      "settings": {
+      }
+    },
     "1647552565fa55fb8d": {
       "type": "image-banner",
       "settings": {
@@ -189,6 +214,7 @@
     }
   },
   "order": [
+    "1e898299-2b12-4390-9a46-434d28b350d7",
     "1647552565fa55fb8d",
     "aa290436-ce1a-467c-bcd1-bb9c9ef49e34",
     "b0ba7213-de05-4317-8972-05536fe612b2",
