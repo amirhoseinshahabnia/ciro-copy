@@ -155,7 +155,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 8,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
