@@ -2,42 +2,11 @@
   "sections": {
     "1647552565fa55fb8d": {
       "type": "image-banner",
-      "blocks": {
-        "16475525652d107349-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Flawlessly Designed Women's Jewelry",
-            "heading_size": "h0"
-          }
-        },
-        "bf12bb54-9f3c-4a0c-8298-332e15afb758": {
-          "type": "text",
-          "settings": {
-            "text": "Express yourself because you deserve it.",
-            "text_style": "body"
-          }
-        },
-        "16475525652d107349-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP",
-            "button_link_1": "shopify:\/\/collections\/all-products",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "16475525652d107349-0",
-        "bf12bb54-9f3c-4a0c-8298-332e15afb758",
-        "16475525652d107349-2"
-      ],
       "settings": {
-        "image_overlay_opacity": 30,
+        "image": "shopify:\/\/shop_images\/summer-sparkle-ciro-jewelry_9cba134c-d6db-4573-9b9c-96e8c4281813.jpg",
+        "image_overlay_opacity": 0,
         "image_height": "large",
-        "adapt_height_first_image": false,
+        "adapt_height_first_image": true,
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
