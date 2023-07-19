@@ -27,6 +27,7 @@
     },
     "1647552565fa55fb8d": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/summer-sparkle-ciro-jewelry_9cba134c-d6db-4573-9b9c-96e8c4281813.jpg",
         "image_overlay_opacity": 0,
