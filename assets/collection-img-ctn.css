@@ -1,0 +1,9 @@
+section.collection-img-ctn {
+  border: none;
+}
+
+.slider-ctn a,
+.slider-ctn img {
+  display: block;
+  width: 100%;
+}

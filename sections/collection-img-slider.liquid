@@ -1,0 +1,53 @@
+{{ 'collection-img-ctn.css' | asset_url | stylesheet_tag }}
+
+{%- capture flickity_options -%}
+  {
+  "prevNextButtons": false,
+      "pageDots": false,
+      "contain": true,
+      "cellAlign": "left",
+      "groupCells": true,
+      "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+    }{%- endcapture -%}
+
+<div class="js-flickity" data-flickity='{{ flickity_options }}'>
+  {% for block in section.blocks %}
+    <div class="slider-ctn carousel-cell" {{ block.shopify_attributes }}>
+      {% if block.settings.image and block.settings.collection %}
+        <a href={{ block.settings.collection.url }}>{{ block.settings.image | image_url: width: 2048 | image_tag }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Collection Image Slider",
+    "class": "collection-img-ctn",
+    "tag": "section",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Image Slider"
+      }
+    ]
+  }
+{% endschema %}
