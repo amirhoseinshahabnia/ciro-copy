@@ -48,25 +48,25 @@
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "nova"
           }
         },
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "lyra"
           }
         },
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "nova"
           }
         },
         "e85b4842-eb34-4662-a6ae-5951a26b401b": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "lyra"
           }
         }
       },
@@ -85,7 +85,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 20,
-        "padding_bottom": 0
+        "padding_bottom": 12
       }
     },
     "c7eb28ab-81c8-4d0d-aa2a-1c6fd2c9be86": {
@@ -119,25 +119,25 @@
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "earrings"
           }
         },
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "earrings"
           }
         },
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "earrings"
           }
         },
         "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gold"
+            "collection": "earrings"
           }
         }
       },
@@ -156,11 +156,12 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 20,
-        "padding_bottom": 0
+        "padding_bottom": 12
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Shop CIRO - Estelle Collection",
         "heading_size": "h2",
