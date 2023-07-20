@@ -22,6 +22,12 @@
   width: 100%;
 }
 
+.ru-card-wrapper h3 {
+  font-family: brandon-grotesque, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
 .card--card,
 .card--standard .card__inner {
   border-radius: var(--card-corner-radius);
