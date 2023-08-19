@@ -143,7 +143,7 @@
           "logo_position": "top-center",
           "menu": "",
           "menu_right": "",
-          "show_line_separator": true,
+          "show_line_separator": false,
           "enable_sticky_header": true,
           "margin_bottom": 0
         }
