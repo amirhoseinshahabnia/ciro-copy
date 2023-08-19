@@ -63,10 +63,10 @@
   .collection-list__item a:hover {
     box-shadow: none;
   }
-
+/*
   .ru-collection-ctn.grid {
     column-gap: 50px;
-  }
+  }*/
 }
 
 @media screen and (max-width: 989px) {
