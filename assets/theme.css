@@ -123,7 +123,7 @@ header-drawer {
 }
 
 .shopify-section {
-    border-bottom: 1px solid black;
+    border-bottom: 0px solid black;
 }
 
 .product-product_new_template_jas .shopify-section {border-bottom:0;}
