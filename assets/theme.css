@@ -34,21 +34,21 @@ header-drawer {
 
 
 @font-face {
-    font-family: 'Gloock-Regular';
-    src: url('Gloock-Regular.woff2') format('woff2'),
-         url('Gloock-Regular.woff') format('woff');
+    font-family: 'dm_serif_displayregular';
+    src: url('dmserifdisplay-regular-webfont.woff2.woff2') format('woff2'),
+         url('dmserifdisplay-regular-webfont.woff2.woff') format('woff');
 }
 
 /* ######################################
     font properties */
 
 .font1m {
-	font-family: 'Gloock-Regular';
+	font-family: 'dm_serif_displayregular';
     font-size: 30px;
 }
 
 .font2m {
-	font-family: 'Gloock-Regular';
+	font-family: 'dm_serif_displayregular';
     font-size: 18px;
 }
 
@@ -68,12 +68,12 @@ header-drawer {
 }
 
 .font3 {
-	font-family: 'Gloock-Regular';
+	font-family: 'dm_serif_displayregular';
     font-size: 30px;
 
 }
 .font4 {
-	font-family: 'Gloock-Regular';
+	font-family: 'dm_serif_displayregular';
     font-size: 7.25vw;
 }
 
@@ -102,7 +102,7 @@ header-drawer {
 }
 
 .main-page-title.page-title {
-    font-family: 'Gloock-Regular';
+    font-family: 'dm_serif_displayregular';
     font-size: 4rem;
 }
 
