@@ -37,8 +37,6 @@ header-drawer {
     font-family: 'gloockregular';
     src: url('gloock-regular-webfont.woff2') format('woff2'),
          url('gloock-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 /* ######################################
