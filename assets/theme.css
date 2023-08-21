@@ -43,12 +43,12 @@ header-drawer {
     font properties */
 
 .font1m {
-	font-family: 'dm_serif_displayregular';
+	font-family: 'Bagerich';
     font-size: 30px;
 }
 
 .font2m {
-	font-family: 'dm_serif_displayregular';
+	font-family: 'Bagerich';
     font-size: 18px;
 }
 
@@ -68,12 +68,12 @@ header-drawer {
 }
 
 .font3 {
-	font-family: 'dm_serif_displayregular';
+	font-family: 'Bagerich';
     font-size: 30px;
 
 }
 .font4 {
-	font-family: 'dm_serif_displayregular';
+	font-family: 'Bagerich';
     font-size: 7.25vw;
 }
 
@@ -102,7 +102,7 @@ header-drawer {
 }
 
 .main-page-title.page-title {
-    font-family: 'dm_serif_displayregular';
+    font-family: 'Bagerich';
     font-size: 4rem;
 }
 
