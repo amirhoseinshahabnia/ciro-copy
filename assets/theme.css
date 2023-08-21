@@ -34,22 +34,22 @@ header-drawer {
 
 
 @font-face {
-    font-family: "BigCaslonFB";
-    src: url("BigCaslonFB-Bold.woff2") format("woff2"),
-    url("BigCaslonFB-Bold.woff") format("woff");
+    font-family: "BigCaslonFB-Regular";
+    src: url("BigCaslonFB-Regular.woff2") format("woff2"),
+    url("BigCaslonFB-Regular.woff") format("woff");
 }
 
 /* ######################################
     font properties */
 
 .font1m {
-	font-family: "BigCaslonFB";
+	font-family: "BigCaslonFB-Regular";
     font-size: 30px;
 
 }
 
 .font2m {
-	font-family: "BigCaslonFB";
+	font-family: "BigCaslonFB-Regular";
     font-size: 18px;
 }
 
@@ -70,13 +70,13 @@ header-drawer {
 
 .font3 {
 
-	font-family: "BigCaslonFB";
+	font-family: "BigCaslonFB-Regular";
     font-size: 30px;
 
 }
 .font4 {
 
-	font-family: "BigCaslonFB";
+	font-family: "BigCaslonFB-Regular";
     font-size: 7.25vw;
 
 }
@@ -107,7 +107,7 @@ header-drawer {
 
 .main-page-title.page-title {
 
-    font-family: "BigCaslonFB";
+    font-family: "BigCaslonFB-Regular";
     font-size: 4rem;
 }
 
