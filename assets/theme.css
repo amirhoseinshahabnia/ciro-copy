@@ -34,22 +34,22 @@ header-drawer {
 
 
 @font-face {
-    font-family: 'helvetica-neue-bold';
-    src: url('helvetica-neue-bold.woff2') format('woff2'),
-         url('helvetica-neue-bold.woff') format('woff');
+    font-family: 'Gloock-Regular';
+    src: url('Gloock-Regular.woff2') format('woff2'),
+         url('Gloock-Regular.woff') format('woff');
 }
 
 /* ######################################
     font properties */
 
 .font1m {
-	font-family: 'helvetica-neue-bold';
+	font-family: 'Gloock-Regular';
     font-size: 30px;
 
 }
 
 .font2m {
-	font-family: 'helvetica-neue-bold';
+	font-family: 'Gloock-Regular';
     font-size: 18px;
 }
 
@@ -70,13 +70,13 @@ header-drawer {
 
 .font3 {
 
-	font-family: 'helvetica-neue-bold';
+	font-family: 'Gloock-Regular';
     font-size: 30px;
 
 }
 .font4 {
 
-	font-family: 'helvetica-neue-bold';
+	font-family: 'Gloock-Regular';
     font-size: 7.25vw;
 
 }
@@ -106,8 +106,7 @@ header-drawer {
 }
 
 .main-page-title.page-title {
-
-    font-family: 'helvetica-neue-bold';
+    font-family: 'Gloock-Regular';
     font-size: 4rem;
 }
 
