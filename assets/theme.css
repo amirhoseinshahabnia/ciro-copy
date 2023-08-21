@@ -43,13 +43,13 @@ header-drawer {
     font properties */
 
 .font1m {
-	font-family: 'Gloock';
+	font-family: "Gloock";
     font-size: 30px;
 
 }
 
 .font2m {
-	font-family: 'Gloock';
+	font-family: "Gloock";
     font-size: 18px;
 }
 
@@ -70,13 +70,13 @@ header-drawer {
 
 .font3 {
 
-	font-family: 'Gloock';
+	font-family: "Gloock";
     font-size: 30px;
 
 }
 .font4 {
 
-	font-family: 'Gloock';
+	font-family: "Gloock";
     font-size: 7.25vw;
 
 }
@@ -107,7 +107,7 @@ header-drawer {
 
 .main-page-title.page-title {
 
-    font-family: 'Gloock';
+    font-family: "Gloock";
     font-size: 4rem;
 }
 
