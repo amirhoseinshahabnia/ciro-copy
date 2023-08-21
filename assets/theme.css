@@ -125,7 +125,7 @@ header-drawer {
 }
 
 .shopify-section {
-    border-bottom: 0px solid black;
+    border-bottom: 1px solid white;
 }
 
 .product-product_new_template_jas .shopify-section {border-bottom:0;}
