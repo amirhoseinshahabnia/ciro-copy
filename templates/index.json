@@ -90,35 +90,26 @@
         "image_ratio": "square",
         "columns_desktop": 4,
         "show_view_all": false,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 48,
-        "padding_bottom": 12
+        "padding_bottom": 24
       }
     },
-    "c7eb28ab-81c8-4d0d-aa2a-1c6fd2c9be86": {
-      "type": "collection-img-slider",
-      "blocks": {
-        "89710fac-04b3-484c-bfa1-a1e544533925": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/summer-sparkle-ciro-jewelry_9cba134c-d6db-4573-9b9c-96e8c4281813.jpg",
-            "collection": "gold"
-          }
-        },
-        "7b050e63-8ddd-4801-97b7-80a1f28a4c24": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/lyra-collection-ciro-jewelry.jpg",
-            "collection": "gold"
-          }
-        }
-      },
-      "block_order": [
-        "89710fac-04b3-484c-bfa1-a1e544533925",
-        "7b050e63-8ddd-4801-97b7-80a1f28a4c24"
-      ],
+    "283e86d2-896d-4a38-8bf7-daac864fa39b": {
+      "type": "image-banner",
       "settings": {
+        "image": "shopify:\/\/shop_images\/NewArrivals.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "b0ba7213-de05-4317-8972-05536fe612b2": {
@@ -161,10 +152,10 @@
         "image_ratio": "square",
         "columns_desktop": 4,
         "show_view_all": false,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 12
+        "padding_top": 48,
+        "padding_bottom": 24
       }
     },
     "featured_collection": {
@@ -190,40 +181,8 @@
     },
     "592684e8-a6e4-41ef-9a53-677cd6f5ca25": {
       "type": "image-banner",
-      "blocks": {
-        "46389dcc-22ea-4d54-82b5-b4806f4f8f61": {
-          "type": "heading",
-          "settings": {
-            "heading": "Wedding & Engagement",
-            "heading_size": "h1"
-          }
-        },
-        "a79aea4a-31d5-4512-bb40-55770fce05dd": {
-          "type": "text",
-          "settings": {
-            "text": "RINGS",
-            "text_style": "body"
-          }
-        },
-        "6aec23e0-2dae-4c72-8d6d-4392aa807144": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "SHOP NOW",
-            "button_link_1": "",
-            "button_style_secondary_1": true,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "46389dcc-22ea-4d54-82b5-b4806f4f8f61",
-        "a79aea4a-31d5-4512-bb40-55770fce05dd",
-        "6aec23e0-2dae-4c72-8d6d-4392aa807144"
-      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Wed_Engage_RINGS_3.jpg",
+        "image": "shopify:\/\/shop_images\/Wed_Engage_RINGS_1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "adapt_height_first_image": false,
@@ -300,7 +259,7 @@
     "1e898299-2b12-4390-9a46-434d28b350d7",
     "1647552565fa55fb8d",
     "aa290436-ce1a-467c-bcd1-bb9c9ef49e34",
-    "c7eb28ab-81c8-4d0d-aa2a-1c6fd2c9be86",
+    "283e86d2-896d-4a38-8bf7-daac864fa39b",
     "b0ba7213-de05-4317-8972-05536fe612b2",
     "featured_collection",
     "592684e8-a6e4-41ef-9a53-677cd6f5ca25",
