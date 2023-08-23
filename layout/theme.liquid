@@ -438,7 +438,12 @@
     {% comment %} <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity-fade@2/flickity-fade.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://unpkg.com/flickity-fade@2/flickity-fade.js"></script> {% endcomment %}</head>
+    <script src="https://unpkg.com/flickity-fade@2/flickity-fade.js"></script> {% endcomment %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+  </head>
 
   <body class="gradient {{ template | handleize }}" data-collection="{{- collection.metafields.collection.variant_filter_name | escape -}}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
