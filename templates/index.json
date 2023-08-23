@@ -76,20 +76,27 @@
           "settings": {
             "collection": "nova"
           }
+        },
+        "95b2b0a4-afba-418f-bb6a-60ecf28394e4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "lyra"
+          }
         }
       },
       "block_order": [
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0",
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-1",
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2",
-        "e85b4842-eb34-4662-a6ae-5951a26b401b"
+        "e85b4842-eb34-4662-a6ae-5951a26b401b",
+        "95b2b0a4-afba-418f-bb6a-60ecf28394e4"
       ],
       "settings": {
         "title": "Featured Designs",
         "heading_size": "h1",
         "image_ratio": "square",
         "columns_desktop": 4,
-        "show_view_all": false,
+        "show_view_all": true,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 48,
