@@ -76,20 +76,13 @@
           "settings": {
             "collection": "nova"
           }
-        },
-        "4d60cf1a-07b5-438e-9adb-cc0bb27d1135": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "lyra"
-          }
         }
       },
       "block_order": [
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0",
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-1",
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2",
-        "e85b4842-eb34-4662-a6ae-5951a26b401b",
-        "4d60cf1a-07b5-438e-9adb-cc0bb27d1135"
+        "e85b4842-eb34-4662-a6ae-5951a26b401b"
       ],
       "settings": {
         "title": "Featured Designs",
@@ -100,8 +93,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 48,
-        "padding_bottom": 24,
-        "enable_slider": true
+        "padding_bottom": 24
       }
     },
     "283e86d2-896d-4a38-8bf7-daac864fa39b": {
@@ -144,7 +136,7 @@
         "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87": {
           "type": "featured_collection",
           "settings": {
-            "collection": "earrings"
+            "collection": "rings"
           }
         }
       },
@@ -163,8 +155,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 48,
-        "padding_bottom": 24,
-        "enable_slider": false
+        "padding_bottom": 24
       }
     },
     "featured_collection": {
