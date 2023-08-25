@@ -7,3 +7,17 @@ section.collection-img-ctn {
   display: block;
   width: 100%;
 }
+
+.slider-ctn .desktop-slider {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .slider-ctn .mobile-slider {
+    display: none;
+  }
+
+  .slider-ctn .desktop-slider {
+    display: block;
+  }
+}
