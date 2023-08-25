@@ -7,6 +7,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/lyra-collection-ciro-jewelry.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-product-anne-necklace-long-cubic-zirconia-silver-white-gold-plated-4mm-scaled.jpg",
             "collection": "gold"
           }
         },
@@ -14,6 +15,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/slide2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-product-anne-memoryring-single-cubic-zirconia-silver-rose-gold-plated-3mm-v2-scaled.jpg",
             "collection": "gold"
           }
         },
@@ -21,6 +23,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/slide3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/ciro-jewelry-first-love-anne-memo-ring-silver-rose-gold-plated-cubic-zirconia.png",
             "collection": "earrings"
           }
         }
