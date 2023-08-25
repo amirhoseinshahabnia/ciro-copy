@@ -146,13 +146,20 @@
           "settings": {
             "collection": "rings"
           }
+        },
+        "7d498a62-6d1a-47ab-98b6-ba2060141932": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "necklaces"
+          }
         }
       },
       "block_order": [
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-0",
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-1",
         "template--19941564907793__b0ba7213-de05-4317-8972-05536fe612b2-1689718404fbcdcedb-2",
-        "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87"
+        "5be9c0ca-12e0-4e35-a220-2e51eb5a5c87",
+        "7d498a62-6d1a-47ab-98b6-ba2060141932"
       ],
       "settings": {
         "title": "Shop by Category",
@@ -164,7 +171,7 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36,
-        "enable_slider": false
+        "enable_slider": true
       }
     },
     "featured_collection": {
