@@ -11,7 +11,7 @@
     "gradient_background_1": "",
     "colors_background_2": "#000000",
     "gradient_background_2": "linear-gradient(228deg, rgba(0, 0, 0, 1) 13%, rgba(0, 0, 0, 1) 83%)",
-    "type_header_font": "caslon_bold_n4",
+    "type_header_font": "helvetica_n3",
     "heading_scale": 100,
     "type_body_font": "helvetica_n4",
     "body_scale": 100,
