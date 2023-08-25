@@ -209,20 +209,27 @@
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "antoinette"
           }
         },
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "antoinette"
+          }
+        },
+        "16098328-4cce-4a79-b974-ebe5c06bdccd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "antoinette"
           }
         }
       },
       "block_order": [
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-1",
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-2",
-        "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-3"
+        "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-3",
+        "16098328-4cce-4a79-b974-ebe5c06bdccd"
       ],
       "settings": {
         "title": "Shop by Collection",
