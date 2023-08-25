@@ -237,13 +237,20 @@
           "settings": {
             "collection": "estelle"
           }
+        },
+        "aa8321bd-02c3-4262-8e4e-50a350d8917b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "estelle"
+          }
         }
       },
       "block_order": [
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-1",
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-2",
         "template--19941564907793__91d6dfe3-a7bc-49c6-a4e5-8d5c630107a9-featured_collection-3",
-        "16098328-4cce-4a79-b974-ebe5c06bdccd"
+        "16098328-4cce-4a79-b974-ebe5c06bdccd",
+        "aa8321bd-02c3-4262-8e4e-50a350d8917b"
       ],
       "settings": {
         "title": "Shop by Collection",
@@ -255,7 +262,7 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36,
-        "enable_slider": false
+        "enable_slider": true
       }
     }
   },
