@@ -9,8 +9,6 @@
 .collection-list {
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 4rem;
-  margin-left: 4rem;
 }
 
 .title-wrapper-with-link.no-border-ru {
@@ -19,7 +17,7 @@
 
 .collection-list-title {
   margin: 0;
-  font-family: 'Gloock', serif;
+  font-family: 'Bagerich';
 }
 
 @media screen and (max-width: 749px) {
@@ -63,10 +61,10 @@
   .collection-list__item a:hover {
     box-shadow: none;
   }
-/*
-  .ru-collection-ctn.grid {
+
+.ru-collection-ctn.grid {
     column-gap: 50px;
-  }*/
+  }
 }
 
 @media screen and (max-width: 989px) {
