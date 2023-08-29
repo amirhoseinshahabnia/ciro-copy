@@ -1,0 +1,37 @@
+/* theme.css/line-70: */
+.font3 {
+	font-family: 'Bagerich';
+    /* font-size: 30px; */
+    font-size: 24px;
+}
+
+/* theme.css/line-127: */
+.shopify-section {
+    /* border-bottom: 1px solid black; */
+    border-bottom: none;
+}
+
+/* section-collection-list-ru.css/line-5: */
+.ru-collection-ctn.grid {
+  column-gap: 30px;
+}
+
+/* section-collection-list-ru.css/line-9: */
+.collection-list {
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+/* section-collection-list-ru.css/line-18: */
+.collection-list-title {
+  margin: 0;
+  /* font-family: 'Bagerich', serif; */
+  font-family: 'Gloock', serif;
+}
+
+/* section-collection-list-ru.css/line-65: */
+@media screen and (min-width: 750px) {
+.ru-collection-ctn.grid {
+    column-gap: 50px;
+  }
+}
