@@ -1,3 +1,8 @@
+/* base.css/line-2229: */
+.header-wrapper--border-bottom {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
 /* theme.css/line-70: */
 .font3 {
 	font-family: 'Bagerich';
