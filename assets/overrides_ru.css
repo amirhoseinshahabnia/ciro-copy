@@ -30,7 +30,7 @@
 /* section-collection-list-ru.css/line-18: */
 .collection-list-title {
   margin: 0;
-  /* font-family: 'Bagerich', serif; */
+  /* font-family: 'Bagerich'; */
   font-family: 'Gloock', serif;
 }
 
@@ -41,6 +41,7 @@
   }
 }
 
+/* footer.liquid/line-43 */
 footer.font5 {
   background-color: #fff8e8;
 }
