@@ -116,13 +116,13 @@
             "collection": "nova"
           }
         },
-        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2": {
+        "b661a2e0-a14d-4192-838a-4dd59fccc771": {
           "type": "featured_collection",
           "settings": {
-            "collection": "nova"
+            "collection": "lyra"
           }
         },
-        "e85b4842-eb34-4662-a6ae-5951a26b401b": {
+        "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2": {
           "type": "featured_collection",
           "settings": {
             "collection": "nova"
@@ -133,13 +133,20 @@
           "settings": {
             "collection": "lyra"
           }
+        },
+        "e85b4842-eb34-4662-a6ae-5951a26b401b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "nova"
+          }
         }
       },
       "block_order": [
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-0",
+        "b661a2e0-a14d-4192-838a-4dd59fccc771",
         "template--19941564907793__aa290436-ce1a-467c-bcd1-bb9c9ef49e34-1689715330e93b0d2e-2",
-        "e85b4842-eb34-4662-a6ae-5951a26b401b",
-        "f6759745-cb05-4e1e-bbd3-6400f6fc7da9"
+        "f6759745-cb05-4e1e-bbd3-6400f6fc7da9",
+        "e85b4842-eb34-4662-a6ae-5951a26b401b"
       ],
       "settings": {
         "title": "Featured Designs",
