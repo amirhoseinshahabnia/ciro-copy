@@ -69,7 +69,7 @@ header-drawer {
 
 .font3 {
 	font-family: 'Bagerich';
-    font-size: 24px;
+    font-size: 30px;
 
 }
 .font4 {
@@ -125,7 +125,7 @@ header-drawer {
 }
 
 .shopify-section {
-    border-bottom: none;
+    border-bottom: 1px solid black;
 }
 
 .product-product_new_template_jas .shopify-section {border-bottom:0;}
